@@ -84,7 +84,7 @@ use Mail::SpamAssassin::Logger;
 use URI;
 use File::Spec;
 use base qw(Mail::SpamAssassin::Plugin);
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 our $CONFIG_DIR = 'google_safebrowsing_dir';
 our $CONFIG_APIKEY = 'google_safebrowsing_apikey';
@@ -133,10 +133,9 @@ sub set_config {
       return $Mail::SpamAssassin::Conf::MISSING_REQUIRED_VALUE;
     }
     $value = Mail::SpamAssassin::Util::untaint_file_path($value);
-    if (not (-d $value and -x _ and -w _)) {
+    if (not (-d $value and -x _)) {
       config_log($config,
-                 "config: $key '$value' isn't a readable and ",
-                 "writable directory");
+                 "config: $key '$value' isn't a readable directory");
       return $Mail::SpamAssassin::Conf::INVALID_VALUE;
     }
     $config->{$key} = $value;
