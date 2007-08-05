@@ -1,4 +1,4 @@
-#   Copyright 2007 Daniel Born
+#   Copyright 2007 Daniel Born <danborn@cpan.org>
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ use Mail::SpamAssassin::Logger;
 use URI;
 use File::Spec;
 use base qw(Mail::SpamAssassin::Plugin);
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 our $CONFIG_DIR = 'google_safebrowsing_dir';
 our $CONFIG_APIKEY = 'google_safebrowsing_apikey';

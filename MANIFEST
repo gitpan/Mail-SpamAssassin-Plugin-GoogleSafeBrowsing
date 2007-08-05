@@ -5,5 +5,4 @@ Makefile.PL
 README
 lib/Mail/SpamAssassin/Plugin/GoogleSafeBrowsing.pm
 t/00-load.t
-t/boilerplate.t
 t/pod.t
